@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <body>
+            <script>
+
+                function esPrimo(num) {
+                    if (num <= 1) return false;
+                    for (let i = 2; i <= Math.sqrt(num); i++) {
+                        if (num % i === 0) return false;
+                    }
+                    return true;
+                }
+
+                function generarPrimos(limite) {
+                    const primos = [];
+                    for (let i = 2; i <= limite; i++) {
+                        if (esPrimo(i)) {
+                            primos.push(i);
+                        }
+                    }
+                    return primos;
+                }
+
+                console.log(generarPrimos(50)); // Genera primos hasta el número 50
+
+
+            </script>
+        </body>
+    </head>
+</html>

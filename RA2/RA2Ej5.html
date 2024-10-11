@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <body>
+            <script>
+
+                function calcularPromedio(numeros) {
+                    const total = numeros.reduce((acc, num) => acc + num, 0);
+                    return total / numeros.length;
+                }
+
+                function calcularMediana(numeros) {
+                    const ordenados = numeros.slice().sort((a, b) => a - b);
+                    const mitad = Math.floor(ordenados.length / 2);
+                    
+                    if (ordenados.length % 2 === 0) {
+                        return (ordenados[mitad - 1] + ordenados[mitad]) / 2;
+                    } else {
+                        return ordenados[mitad];
+                    }
+                }
+
+                // Ejemplo de uso
+                const numeros = [10, 2, 8, 4, 5];
+                console.log(`Promedio: ${calcularPromedio(numeros)}`);
+                console.log(`Mediana: ${calcularMediana(numeros)}`);
+
+
+            </script>
+        </body>
+    </head>
+</html>

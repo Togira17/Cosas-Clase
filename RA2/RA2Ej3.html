@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <body>
+            <script>
+
+                /** 3. Validación de Formulario
+                ● Descripción: Escribe un programa que valide un formulario básico con nombre,
+                edad y correo electrónico. El nombre debe tener al menos 3 caracteres, la edad
+                debe ser un número mayor a 18, y el correo debe tener un formato válido.
+                ● Requisitos:
+                ○ Usa expresiones regulares para validar el correo.
+                ○ Utiliza funciones y estructuras if-else para validar cada campo.
+                ○ Implementa manejo de errores si los datos no son válidos.
+                ● Objetivo: Aplicar validaciones de entradas y manejo de errores.**/
+
+                // Función para validar el nombre
+                function validarNombre(nombre) {
+                    if (nombre.length >= 3) {
+                        return true;
+                    } else {
+                        throw new Error("El nombre debe tener al menos 3 caracteres.");
+                    }
+                }
+
+                // Función para validar la edad
+                function validarEdad(edad) {
+                    if (typeof edad === "number" && edad > 18) {
+                        return true;
+                    } else {
+                        throw new Error("La edad debe ser un número mayor a 18.");
+                    }
+                }
+
+                // Función para validar el correo electrónico
+                function validarCorreo(correo) {
+                    const expresionCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expresión regular para validar el correo
+                    if (expresionCorreo.test(correo)) {
+                        return true;
+                    } else {
+                        throw new Error("El correo electrónico no tiene un formato válido.");
+                    }
+                }
+
+                // Función principal para validar el formulario
+                function validarFormulario(nombre, edad, correo) {
+                    try {
+                        // Validar cada campo usando las funciones específicas
+                        validarNombre(nombre);
+                        validarEdad(edad);
+                        validarCorreo(correo);
+                        
+                        console.log("Formulario válido. ¡Todos los campos son correctos!");
+                    } catch (error) {
+                        // Muestra el mensaje de error en caso de que alguna validación falle
+                        console.error("Error:", error.message);
+                    }
+                }
+
+                // Pruebas de la función de validación de formulario
+                validarFormulario("Juan", 20, "juan@example.com");     // Caso válido
+                validarFormulario("Ana", 17, "ana@example.com");       // Error: Edad menor a 18
+                validarFormulario("Li", 25, "li@example.com");         // Error: Nombre muy corto
+                validarFormulario("Carlos", 22, "carlos@example");     // Error: Correo no válido
+
+            </script>
+        </body>
+    </head>
+</html>

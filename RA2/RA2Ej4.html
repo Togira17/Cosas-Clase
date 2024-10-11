@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <body>
+            <script>
+
+                function simulacionDados() {
+                    let conteoSiete = 0;
+
+                    for (let i = 0; i < 100; i++) {
+                        // Generar dos números aleatorios entre 1 y 6
+                        const dado1 = Math.floor(Math.random() * 6) + 1;
+                        const dado2 = Math.floor(Math.random() * 6) + 1;
+                        
+                        if (dado1 + dado2 === 7) {
+                            conteoSiete++;
+                        }
+                    }
+                    
+                    console.log(`Se obtuvo un total de 7 en ${conteoSiete} ocasiones.`);
+                }
+
+                simulacionDados();
+
+
+            </script>
+        </body>
+    </head>
+</html>

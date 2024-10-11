@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <body>
+            <script>
+
+
+                function generarTablaMultiplicar(numero, limite = 10) {
+                    if (typeof numero !== "number" || typeof limite !== "number") {
+                        console.error("Error: Ingresa un número válido.");
+                        return;
+                    }
+                    
+                    for (let i = 1; i <= limite; i++) {
+                        console.log(`${numero} x ${i} = ${numero * i}`);
+                    }
+                }
+
+                generarTablaMultiplicar(5);
+
+            </script>
+        </body>
+    </head>
+</html>

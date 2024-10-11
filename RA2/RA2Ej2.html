@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <body>
+            <script>
+
+                /**2. Conversor de Temperatura
+                ● Descripción: Crea una función que convierta una temperatura dada en grados
+                Celsius a Fahrenheit y viceversa. Usa el parámetro de una función para determinar
+                la dirección de la conversión.
+                ● Requisitos:
+                ○ Usa switch para elegir entre las conversiones.
+                ○ Utiliza typeof para verificar que las entradas sean números.
+                ○ Añade manejo de errores para valores no válidos usando try...catch.
+                ● Objetivo: Trabajar con parámetros, manejo de tipos y estructuras de control.**/
+
+
+                // Conversor de temperaturas (Celsius a Farenheit y viceversa)
+                function convertirTemperatura(valor, tipoTemperatura) {
+                    try {
+                        // Comprobamos que el valor ingresado sea un número
+                        if (typeof valor !== "number") {
+                            throw new Error("El valor de temperatura debe ser un número.");
+                        }
+
+                        let resultado;
+
+                        // Switch para convertir la temp
+                        switch (tipoTemperatura) {
+                            case "Celsius": // Celsius a Fahrenheit
+                                resultado = (valor * 9/5) + 32;
+                                console.log(`${valor}°C es igual a ${resultado}°F`);
+                                break;
+                            case "Fahrenheit": // Fahrenheit a Celsius
+                                resultado = (valor - 32) * 5/9;
+                                console.log(`${valor}°F es igual a ${resultado}°C`);
+                                break;
+                            default:
+                                // Si el tipo de temperatura no es válido, lanzamos un error
+                                throw new Error("Tipo de temperatura no válido. Usa 'Celsius' o 'Fahrenheit'.");
+                        }
+                    } catch (error) {
+                        //  Cualquier otro error
+                        console.error("Error:", error.message);
+                    }
+                }
+
+                // Testing
+                convertirTemperatura(25, "Celsius");      
+                convertirTemperatura(77, "Fahrenheit");   
+                convertirTemperatura("treinta", "Celsius"); // Error de tipo
+                convertirTemperatura(100, "Kelvin");      // Error de tipoTemperatura
+
+
+            </script>
+        </body>
+    </head>
+</html>

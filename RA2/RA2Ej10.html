@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <body>
+            <script>
+
+                function calculadora(num1, num2, operacion) {
+                    try {
+                        if (typeof num1 !== "number" || typeof num2 !== "number") {
+                            throw new Error("Entrada no válida. Debes ingresar números.");
+                        }
+
+                        switch (operacion) {
+                            case "suma":
+                                return num1 + num2;
+                            case "resta":
+                                return num1 - num2;
+                            case "multiplicacion":
+                                return num1 * num2;
+                            case "division":
+                                if (num2 === 0) {
+                                    throw new Error("No se puede dividir por cero.");
+                                }
+                                return num1 / num2;
+                            default:
+                                throw new Error("Operación no válida. Usa suma, resta, multiplicacion o division.");
+                        }
+                    } catch (error) {
+                        console.error("Error:", error.message);
+                    }
+                }
+
+                // Prueba de la calculadora
+                console.log(calculadora(10, 5, "suma"));
+                console.log(calculadora(10, 0, "division")); // Error: No se puede dividir por cero
+                console.log(calculadora(10, "cinco", "multiplicacion")); // Error: Entrada no válida
+
+
+            </script>
+        </body>
+    </head>
+</html>

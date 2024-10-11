@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <body>
+            <script>
+
+                const estudiantes = [];
+
+                function agregarEstudiante(nombre, edad, notas) {
+                    estudiantes.push({ nombre, edad, notas });
+                }
+
+                function mostrarEstudiantes() {
+                    estudiantes.forEach(estudiante => {
+                        console.log(`Nombre: ${estudiante.nombre}, Edad: ${estudiante.edad}, Notas: ${estudiante.notas}`);
+                    });
+                }
+
+                function calcularMedia(estudiante) {
+                    const total = estudiante.notas.reduce((acc, nota) => acc + nota, 0);
+                    return total / estudiante.notas.length;
+                }
+
+                // Prueba del programa
+                agregarEstudiante("Luis", 20, [85, 90, 78]);
+                agregarEstudiante("Ana", 22, [92, 88, 79]);
+                mostrarEstudiantes();
+                console.log(`Media de Luis: ${calcularMedia(estudiantes[0])}`);
+
+
+            </script>
+        </body>
+    </head>
+</html>

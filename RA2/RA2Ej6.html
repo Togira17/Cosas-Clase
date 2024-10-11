@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <body>
+            <script>
+
+
+                function jugarPiedraPapelTijeras() {
+                    const opciones = ["piedra", "papel", "tijeras"];
+                    const jugadaUsuario = prompt("Elige piedra, papel o tijeras:").toLowerCase();
+                    const jugadaComputadora = opciones[Math.floor(Math.random() * 3)];
+                    
+                    console.log(`Usuario: ${jugadaUsuario}`);
+                    console.log(`Computadora: ${jugadaComputadora}`);
+                    
+                    if (!opciones.includes(jugadaUsuario)) {
+                        console.log("Entrada no válida.");
+                        return;
+                    }
+                    
+                    if (jugadaUsuario === jugadaComputadora) {
+                        console.log("Es un empate.");
+                    } else if (
+                        (jugadaUsuario === "piedra" && jugadaComputadora === "tijeras") ||
+                        (jugadaUsuario === "papel" && jugadaComputadora === "piedra") ||
+                        (jugadaUsuario === "tijeras" && jugadaComputadora === "papel")
+                    ) {
+                        console.log("¡Ganaste!");
+                    } else {
+                        console.log("La computadora gana.");
+                    }
+                }
+
+                jugarPiedraPapelTijeras();
+
+            </script>
+        </body>
+    </head>
+</html>

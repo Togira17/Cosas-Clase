@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <body>
+            <script>
+
+            /**1. Gestión de un Carrito de Compras
+            ● Descripción: Implementa un sistema de carrito de compras donde se puedan
+            agregar productos con un nombre, precio y cantidad. El programa debe calcular el
+            total del carrito y mostrar todos los productos en el carrito utilizando funciones.
+            ● Requisitos:
+            ○ Usa var, let, y const para las variables adecuadas.
+            ○ Usa estructuras de control como if-else para verificar si el producto ya
+            está en el carrito.
+            ○ Utiliza un bucle for para mostrar todos los productos y calcular el total.
+            ● Objetivo: Practicar el uso de estructuras, funciones y control de flujo en una
+            situación más cercana a la vida real.**/
+
+                // Hacemos un array vacio para almacenar la compra
+                let carrito = [];
+
+                // Creamos la funcion que permita añadir productos al carro y lo añadimos como un array (nombre precio cantidad)
+                function agregarProducto(nombre, precio, cantidad) {
+                    carrito.push([nombre, precio, cantidad]);
+                }
+
+                // Mostramos por consola el carrito con los productos que llevamos dentro
+                function mostrarCarrito() {
+                    console.log("Productos en el carrito:");
+                    carrito.forEach(producto => {
+                        console.log(`- ${producto[0]}: $${producto[1]} x ${producto[2]}`);
+                    });
+                }
+
+                // Calculo del total del carrito
+                function calcularTotal() {
+                    let total = 0;
+                    
+                    // Recorremos el carrito y calculamos los precios totales
+                    carrito.forEach(producto => {
+                        total += producto[1] * producto[2]; // Precio * Cantidad
+                    });
+                    
+                    console.log(`Total del carrito: $${total}`);
+                }
+
+                // Test carrito
+                agregarProducto("Manzanas", 2, 5); 
+                agregarProducto("Pan", 1.5, 3);    
+
+                mostrarCarrito();  // Muestra los productos en el carrito
+                calcularTotal();   // Calcula y muestra el total
+
+
+            </script>
+        </body>
+    </head>
+</html>
