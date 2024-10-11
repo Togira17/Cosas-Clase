@@ -3,15 +3,27 @@
         <body>
             <script>
 
+                /**
+                4. Simulación de Lanzamiento de Dados
+                ● Descripción: Crea una función que simule el lanzamiento de dos dados (números aleatorios entre 1 y 6). El programa debe contar cuántas veces se obtiene un total de
+                7 al lanzar los dados 100 veces.
+                ● Requisitos:
+                ○ Usa un bucle for para realizar las simulaciones.
+                ○ Utiliza Math.random() para generar los números aleatorios.
+                ○ Usa una función para encapsular la lógica del lanzamiento de dados.
+                ● Objetivo: Trabajar con números aleatorios, bucles y funciones.
+                **/
+
+                //Funcion que simula el lanzamiento de 100 dados
                 function simulacionDados() {
-                    let conteoSiete = 0;
+                    let conteoSiete = 0; //Incializa el contador de 7
 
                     for (let i = 0; i < 100; i++) {
-                        // Generar dos números aleatorios entre 1 y 6
-                        const dado1 = Math.floor(Math.random() * 6) + 1;
-                        const dado2 = Math.floor(Math.random() * 6) + 1;
+                        // Generar dos números aleatorios entre 1 y 6 (sumamos el 1 pq simula del 0 al 5)
+                        const dado1 = Math.floor(Math.random() * 6) + 1; //Con la funcion floor redondeamos a enteros
+                        const dado2 = Math.floor(Math.random() * 6) + 1; // ya que nos genera numeros randoms decimales
                         
-                        if (dado1 + dado2 === 7) {
+                        if (dado1 + dado2 === 7) { //Si la suma de los dados es 7 suma 1 al contador
                             conteoSiete++;
                         }
                     }
@@ -19,6 +31,7 @@
                     console.log(`Se obtuvo un total de 7 en ${conteoSiete} ocasiones.`);
                 }
 
+                //Testing
                 simulacionDados();
 
 

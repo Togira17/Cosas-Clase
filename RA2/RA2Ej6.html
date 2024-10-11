@@ -3,33 +3,45 @@
         <body>
             <script>
 
+                /**
+                6. Juego de Piedra, Papel o Tijeras
+                ● Descripción: Implementa el clásico juego de "Piedra, Papel o Tijeras" donde el usuario juega contra la computadora. Usa prompt para recibir la jugada del usuario
+                y Math.random() para la jugada de la computadora.
+                ● Requisitos:
+                ○ Usa una función switch para determinar el ganador.
+                ○ Controla la lógica de empate, victoria y derrota con una estructura if-else.
+                ○ Añade validaciones para entradas incorrectas.
+                ● Objetivo: Usar funciones, estructuras de control y manejo de entradas aleatorias.
+                **/
 
+                //Funcion juego PPT
                 function jugarPiedraPapelTijeras() {
                     const opciones = ["piedra", "papel", "tijeras"];
-                    const jugadaUsuario = prompt("Elige piedra, papel o tijeras:").toLowerCase();
-                    const jugadaComputadora = opciones[Math.floor(Math.random() * 3)];
+                    const jugadaUsuario = prompt("Elige piedra, papel o tijeras:").toLowerCase(); //aseguramos que coincida con nuestras opciones 
+                    const jugadaComputadora = opciones[Math.floor(Math.random() * 3)]; //opciones de la maquina para el juego
                     
                     console.log(`Usuario: ${jugadaUsuario}`);
                     console.log(`Computadora: ${jugadaComputadora}`);
                     
-                    if (!opciones.includes(jugadaUsuario)) {
+                    if (!opciones.includes(jugadaUsuario)) { //En caso de que seleccione opcion no valida.
                         console.log("Entrada no válida.");
                         return;
                     }
                     
                     if (jugadaUsuario === jugadaComputadora) {
                         console.log("Es un empate.");
-                    } else if (
+                    } else if ( //Comparamos resultados y damos como ganador al jugador
                         (jugadaUsuario === "piedra" && jugadaComputadora === "tijeras") ||
                         (jugadaUsuario === "papel" && jugadaComputadora === "piedra") ||
                         (jugadaUsuario === "tijeras" && jugadaComputadora === "papel")
                     ) {
-                        console.log("¡Ganaste!");
-                    } else {
+                        console.log("¡Ganaste!"); 
+                    } else { //En caso contrario gana la maquina
                         console.log("La computadora gana.");
                     }
                 }
 
+                // Testing
                 jugarPiedraPapelTijeras();
 
             </script>

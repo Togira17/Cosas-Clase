@@ -3,24 +3,37 @@
         <body>
             <script>
 
-                const estudiantes = [];
 
-                function agregarEstudiante(nombre, edad, notas) {
+                /**
+                8. Gestión de Estudiantes
+                ● Descripción: Implementa un programa que permita gestionar una lista de
+                estudiantes, donde cada estudiante tiene nombre, edad y notas. El programa debe
+                permitir agregar estudiantes, mostrar todos los estudiantes y calcular la nota media de cada uno.
+                ● Requisitos:
+                ○ Usa arrays y objetos para almacenar la información de los estudiantes.
+                ○ Utiliza funciones para agregar, mostrar y calcular la media.
+                ○ Usa un bucle for...of o forEach para recorrer la lista de estudiantes.
+                ● Objetivo: Practicar con objetos, arrays y bucles.
+                **/
+
+                const estudiantes = []; //Creamos la lista de estudiantes
+
+                function agregarEstudiante(nombre, edad, notas) { //creamos la funcion que nos permite añadir estudiantes con sus datos
                     estudiantes.push({ nombre, edad, notas });
                 }
 
-                function mostrarEstudiantes() {
+                function mostrarEstudiantes() { // Funcion que permite mostrar los estudiantes que hemos creado 
                     estudiantes.forEach(estudiante => {
                         console.log(`Nombre: ${estudiante.nombre}, Edad: ${estudiante.edad}, Notas: ${estudiante.notas}`);
                     });
                 }
 
                 function calcularMedia(estudiante) {
-                    const total = estudiante.notas.reduce((acc, nota) => acc + nota, 0);
-                    return total / estudiante.notas.length;
+                    const total = estudiante.notas.reduce((acc, nota) => acc + nota, 0); // Usamos reduce que itera sobre cada elemento del array estudiantes.notas 
+                    return total / estudiante.notas.length;   //siendo acc un acumulador que se inicia en cero para sumar todas las notas el cual luego dividimos para la media
                 }
 
-                // Prueba del programa
+                // Testing
                 agregarEstudiante("Luis", 20, [85, 90, 78]);
                 agregarEstudiante("Ana", 22, [92, 88, 79]);
                 mostrarEstudiantes();

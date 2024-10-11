@@ -3,13 +3,28 @@
         <body>
             <script>
 
+                /**
+                10. Manejo de Errores Avanzado
+                ● Descripción: Escribe un programa que simule una calculadora básica con las
+                operaciones de suma, resta, multiplicación y división. El programa debe manejar los siguientes errores:
+                ○ División por cero.
+                ○ Entrada no válida (no es un número).
+                ○ Operación no válida.
+                ● Requisitos:
+                ○ Usa try...catch para manejar los errores.
+                ○ Implementa una estructura if-else o switch para las operaciones.
+                ○ Usa throw para lanzar excepciones personalizadas si se detecta un error.
+                ● Objetivo: Practicar el manejo avanzado de errores y excepciones en un entorno de lógica matemática.
+                **/
+
+                // Funcion calculadora 
                 function calculadora(num1, num2, operacion) {
                     try {
-                        if (typeof num1 !== "number" || typeof num2 !== "number") {
+                        if (typeof num1 !== "number" || typeof num2 !== "number") { //comprobaciones que aseguran que se mete el tipo de dato pedido
                             throw new Error("Entrada no válida. Debes ingresar números.");
                         }
 
-                        switch (operacion) {
+                        switch (operacion) { //Switch que alterna las distintas operaciones pedidas
                             case "suma":
                                 return num1 + num2;
                             case "resta":
@@ -22,14 +37,14 @@
                                 }
                                 return num1 / num2;
                             default:
-                                throw new Error("Operación no válida. Usa suma, resta, multiplicacion o division.");
+                                throw new Error("Operación no válida. Usa suma, resta, multiplicacion o division."); //comprobamos que ha metido el tipo de operación correcta
                         }
                     } catch (error) {
-                        console.error("Error:", error.message);
+                        console.error("Error:", error.message); //Errores 
                     }
                 }
 
-                // Prueba de la calculadora
+                // Testing
                 console.log(calculadora(10, 5, "suma"));
                 console.log(calculadora(10, 0, "division")); // Error: No se puede dividir por cero
                 console.log(calculadora(10, "cinco", "multiplicacion")); // Error: Entrada no válida

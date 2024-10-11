@@ -3,24 +3,37 @@
         <body>
             <script>
 
+                /**
+                7. Generador de Números Primos
+                ● Descripción: Escribe una función que reciba un número y devuelva un array con todos los números primos menores o iguales a ese número.
+                ● Requisitos:
+                ○ Usa un bucle anidado para comprobar si un número es primo.
+                ○ Usa una estructura for o while para iterar sobre los números.
+                ○ Utiliza una función isPrime() para verificar si un número es primo.
+                ● Objetivo: Trabajar con bucles anidados y funciones para resolver un problema matemático.
+                **/
+
+                //Funcion que verifica si un numero es primo
                 function esPrimo(num) {
-                    if (num <= 1) return false;
-                    for (let i = 2; i <= Math.sqrt(num); i++) {
+                    if (num <= 1) return false; //Menor que 1 no es primo 
+                    for (let i = 2; i <= Math.sqrt(num); i++) { //Comprueba q la raiz no es menor o igual que el numero sugferido
                         if (num % i === 0) return false;
                     }
                     return true;
                 }
 
+                //Generamos un array de numeros primos (menores o igual al numero dado)
                 function generarPrimos(limite) {
                     const primos = [];
                     for (let i = 2; i <= limite; i++) {
-                        if (esPrimo(i)) {
-                            primos.push(i);
+                        if (esPrimo(i)) { //Comprobamos si es primo
+                            primos.push(i); //Si lo es lo agregamos al array
                         }
                     }
-                    return primos;
+                    return primos; // Devuelve el array con los numeros primos 
                 }
 
+                //Testing
                 console.log(generarPrimos(50)); // Genera primos hasta el número 50
 
 
