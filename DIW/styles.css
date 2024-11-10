@@ -1,0 +1,80 @@
+/* Estilos generales para la página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    font-size: 1.1em;
+}
+
+/* Estilos para la sección de información */
+.info h2 {
+    color: #333;
+}
+
+.parrafo {
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    padding: 15px;
+    border-left: 4px solid #4CAF50;
+}
+
+/* Estilos para la lista de tareas */
+.tasks h2 {
+    color: #333;
+}
+
+.lista-tareas {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.lista-tareas li {
+    margin: 8px 0;
+    padding: 8px;
+    background-color: #e8e8e8;
+    border-radius: 5px;
+}
+
+/* Estilos para la galería de imágenes */
+.gallery h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.gallery img {
+    margin: 10px;
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}

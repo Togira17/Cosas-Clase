@@ -1,0 +1,79 @@
+/* Reset de márgenes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Asegura que el body ocupe toda la pantalla */
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Wrapper ocupa toda la pantalla y organiza contenido */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Altura mínima de 100% del viewport */
+}
+
+/* La sección de contenido toma el espacio disponible */
+.container {
+    flex-grow: 1; /* Crece para ocupar el espacio disponible entre header y footer */
+}
+
+/* Estilos para el footer */
+.footer {
+    background-color: #f8f9fa;  /* Fondo del footer */
+    padding: 1em;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid #dee2e6;
+    position: relative;  /* Cambiar de absolute a relative */
+    display: flex;  /* Usamos flexbox dentro del footer */
+    justify-content: center;  /* Centra el contenido horizontalmente */
+    align-items: center;  /* Centra el contenido verticalmente */
+    height: 100px;  /* Fija una altura para el footer (puedes ajustar este valor según el diseño) */
+    box-sizing: border-box;  /* Asegura que el padding no cause desbordamiento */
+    left: 0; /* Asegura que no se desplace fuera del contenedor */
+    right: 0; /* Asegura que no se desplace fuera del contenedor */
+}
+
+/* Asegúrate de que la imagen o el contenido dentro del footer no cause desbordamiento */
+.footer p {
+    margin: 0;
+    padding: 0;
+    white-space: nowrap; /* Previene el salto de línea si hay texto largo */
+}
+
+/* Estilos para las imágenes en la galería */
+.gallery-image {
+    width: 100%;        /* Hace que la imagen ocupe el 100% del contenedor */
+    height: 200px;      /* Establece una altura fija */
+    object-fit: cover;  /* Mantiene las proporciones y recorta si es necesario */
+}
+
+/* Estilo para la tarjeta de imagen, opcional para bordes */
+.image-card {
+    border: 1px solid #ddd;  /* Añade un borde ligero */
+    border-radius: 10px;      /* Bordes redondeados */
+    overflow: hidden;         /* Oculta cualquier parte que sobresalga */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);  /* Añade sombra para un efecto elevado */
+}
+
+.image-card img {
+    border-bottom: 2px solid #ddd; /* Añade una línea de separación entre la imagen y la descripción */
+}
+
+/* Ajuste del texto de la descripción */
+.image-card p {
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}

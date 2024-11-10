@@ -1,0 +1,45 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Estilos para la sección de información con clases CSS */
+.info h2 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.descripcion {
+    background-color: #f0f0f0;
+    margin: 10px 20px;
+    padding: 15px;
+    border-left: 4px solid #4CAF50;
+    color: #333;
+}
+
+/* Estilos para la galería de imágenes */
+.gallery h2 {
+    color: #333;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.gallery .imagen {
+    margin: 10px;
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes en el pie de página con estilos en línea */
+footer p {
+    font-size: 14px;
+    margin: 0;
+}
